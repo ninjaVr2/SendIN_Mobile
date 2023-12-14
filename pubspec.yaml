@@ -39,6 +39,8 @@ dependencies:
   http: ^1.1.0
   image_picker: ^1.0.5
   provider: ^6.1.1
+  url_launcher: ^6.1.14
+  select_form_field: ^2.2.0
   
 
 dev_dependencies:
