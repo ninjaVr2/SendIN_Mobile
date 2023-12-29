@@ -14,6 +14,8 @@ class _homeState extends State<home> {
       appBar: AppBar(),
       body: PageView(),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 4,
+        type: BottomNavigationBarType.shifting,
         items: []
         ),
     );
