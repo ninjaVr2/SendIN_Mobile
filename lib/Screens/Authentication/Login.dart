@@ -10,13 +10,22 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
+  bool isobsure = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: [],
+            children: [
+              Text("Welcome back!"),
+              Form(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                child: Column(),
+                ),
+            ],
           ),
           ),
           ),
