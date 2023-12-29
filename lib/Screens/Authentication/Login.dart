@@ -11,8 +11,10 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
-  bool isobsure = true;
+  bool _isObscure = true;
   bool checkval = false;
+  TextEditingController email =  TextEditingController();
+  TextEditingController password =  TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +35,42 @@ class _LoginState extends State<Login> {
                       fontSize: 28
                     ),
                     ),
+                    SizedBox(height: 30,),
                   Form(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     child: Column(
                       children: [
+                        TextFormField(
+                          controller: email,
+                          decoration: InputDecoration(
+                            labelText: 'Email Address or Username',
+                            hintText: 'Enter your Email Address or Username',
+                          ),
+                        ),
+                        SizedBox(height: 10,),
+                        TextFormField(
+                          controller: password,
+                          obscureText: _isObscure,
+                          decoration: InputDecoration(
+                            labelText: 'Password',
+                            hintText: 'Enter your password',
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _isObscure ? Icons.visibility_off : Icons.visibility,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _isObscure = !_isObscure;
+                                });
+                              },
+                            ),
+                            )
+                        ),
+                        SizedBox(height: 5,),
                         Row(
                           children: [
                             Checkbox(
-                              
+                              //TODO: Change shape
                               value: checkval, 
                               onChanged: (check){
                               setState(() {
@@ -63,12 +93,36 @@ class _LoginState extends State<Login> {
                           )
                           ],
                         ),
+                        SizedBox(height: 10,),
                         ElevatedButton(
                           onPressed: (){}, 
-                          child: Text("LOGIN"))
+                          child: Text(
+                            "LOGIN",
+                            style: TextStyle(
+                              color: Colors.white
+                            ),
+                            ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 51, 39, 186),
+                            textStyle: TextStyle(
+                              color: Colors.white
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            padding: EdgeInsets.symmetric(vertical: 20),
+                            fixedSize: Size(
+                              MediaQuery.of(context).size.width*0.95,
+                              40
+                            ),
+                          ),
+                          ),       
                       ],
                     ),
                     ),
+                    const SizedBox(
+                      height: 15,
+                      ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
