@@ -1,4 +1,8 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:sendin_mobile/Shared/Screens/Splash/Splash1.dart';
+import 'package:sendin_mobile/Shared/Screens/Splash/Splash2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,6 +10,15 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+Widget splash(dynamic splash,Widget nextScreen){
+  return AnimatedSplashScreen(
+    splash: splash,
+    nextScreen: nextScreen,
+    splashTransition: SplashTransition.slideTransition,
+    pageTransitionType: PageTransitionType.rightToLeft,
+    );
+}
 
   // This widget is the root of your application.
   @override
@@ -16,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 117, 75, 189)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: AnimatedSplashScreen(splash: splash1(), nextScreen: AnimatedSplashScreen(splash: splash2(),nextScreen: MyHomePage(title: "dfd"),)),
     );
   }
 }
