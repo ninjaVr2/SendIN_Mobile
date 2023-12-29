@@ -1,8 +1,10 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:sendin_mobile/Screens/Home/Home.dart';
 import 'package:sendin_mobile/Shared/Screens/Splash/Splash1.dart';
 import 'package:sendin_mobile/Shared/Screens/Splash/Splash2.dart';
+import 'package:sendin_mobile/Shared/Screens/Splash/Splash3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +17,7 @@ Widget splash(dynamic splash,Widget nextScreen){
   return AnimatedSplashScreen(
     splash: splash,
     nextScreen: nextScreen,
+    duration: 3000,
     splashTransition: SplashTransition.slideTransition,
     pageTransitionType: PageTransitionType.rightToLeft,
     );
@@ -29,7 +32,12 @@ Widget splash(dynamic splash,Widget nextScreen){
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 117, 75, 189)),
         useMaterial3: true,
       ),
-      home: AnimatedSplashScreen(splash: splash1(), nextScreen: AnimatedSplashScreen(splash: splash2(),nextScreen: MyHomePage(title: "dfd"),)),
+      home: splash(splash1(),
+                splash(splash2(),
+                    splash(splash3(), home()
+                    )
+                )
+            ),
     );
   }
 }
