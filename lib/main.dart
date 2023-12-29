@@ -28,6 +28,7 @@ Widget splash(dynamic splash,Widget nextScreen){
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SendIn Insurance',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 117, 75, 189)),
         useMaterial3: true,
@@ -44,6 +45,7 @@ Widget splash(dynamic splash,Widget nextScreen){
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
 
   @override
