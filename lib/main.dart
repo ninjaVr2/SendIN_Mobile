@@ -2,7 +2,6 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sendin_mobile/Screens/Authentication/Login.dart';
-import 'package:sendin_mobile/Screens/Home/Home.dart';
 import 'package:sendin_mobile/Shared/Screens/Splash/Splash1.dart';
 import 'package:sendin_mobile/Shared/Screens/Splash/Splash2.dart';
 import 'package:sendin_mobile/Shared/Screens/Splash/Splash3.dart';
