@@ -37,6 +37,12 @@ class _homeState extends State<home> {
         backgroundColor: const Color.fromARGB(255, 128, 60, 141),
         elevation: 4,
         type: BottomNavigationBarType.shifting,
+        unselectedLabelStyle: TextStyle(
+          color: Colors.grey
+        ),
+        selectedLabelStyle: TextStyle(
+          color: Color.fromARGB(255, 51, 39, 186)
+        ),
         items: [
           BottomNavigationBarItem(
             activeIcon: Icon(
