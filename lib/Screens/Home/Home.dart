@@ -37,6 +37,8 @@ class _homeState extends State<home> {
         backgroundColor: const Color.fromARGB(255, 128, 60, 141),
         elevation: 4,
         type: BottomNavigationBarType.shifting,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Color.fromARGB(255, 51, 39, 186),
         unselectedLabelStyle: TextStyle(
           color: Colors.grey
         ),
