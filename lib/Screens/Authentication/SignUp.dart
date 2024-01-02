@@ -10,6 +10,12 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sign Up"),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+      ),
+    );
   }
 }

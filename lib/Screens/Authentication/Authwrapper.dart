@@ -9,6 +9,16 @@ class Authwrapper extends StatefulWidget {
 }
 
 class _AuthwrapperState extends State<Authwrapper> {
+
+
+@override
+void initState() {
+  super.initState();
+  checkAuth();
+}
+
+checkAuth(){}
+
   @override
   Widget build(BuildContext context) {
     return Container();

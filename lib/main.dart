@@ -30,7 +30,7 @@ Widget splash(dynamic splash,Widget nextScreen){
       title: 'SendIn Insurance',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 117, 75, 189)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 76, 239, 160)),
         useMaterial3: true,
       ),
       home: splash(splash1(),

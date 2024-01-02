@@ -1,6 +1,9 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:sendin_mobile/Screens/Authentication/Reset_Password.dart';
+import 'package:sendin_mobile/Screens/Authentication/SignUp.dart';
+import 'package:sendin_mobile/Screens/Home/Home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -23,7 +26,7 @@ class _LoginState extends State<Login> {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 10.0
+              horizontal: 20.0
               ),
             child: SingleChildScrollView(
               child: Column(
@@ -47,7 +50,9 @@ class _LoginState extends State<Login> {
                             hintText: 'Enter your Email Address or Username',
                           ),
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 15,
+                          ),
                         TextFormField(
                           controller: password,
                           obscureText: _isObscure,
@@ -67,12 +72,13 @@ class _LoginState extends State<Login> {
                             )
                         ),
                         SizedBox(
-                          height: 5,
+                          height: 20,
                           ),
                         Row(
                           children: [
                             Checkbox(
-                              //TODO: Change shape
+                              activeColor: Color.fromARGB(255, 18, 18, 161),
+                              shape: CircleBorder(),
                               value: checkval, 
                               onChanged: (check){
                               setState(() {
@@ -85,7 +91,13 @@ class _LoginState extends State<Login> {
                               child: SizedBox()
                               ),
                             TextButton(
-                            onPressed: (){}, 
+                            onPressed: (){
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => ResetPassPage()
+                                  )
+                              );
+                            }, 
                             child: Text(
                               "Forgot password?",
                               style: TextStyle(
@@ -95,9 +107,15 @@ class _LoginState extends State<Login> {
                           )
                           ],
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(height: 30,),
                         ElevatedButton(
-                          onPressed: (){}, 
+                          onPressed: (){
+                            Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => home()
+                                  )
+                              );
+                          }, 
                           child: Text(
                             "LOGIN",
                             style: TextStyle(
@@ -105,7 +123,7 @@ class _LoginState extends State<Login> {
                             ),
                             ),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color.fromARGB(255, 51, 39, 186),
+                            backgroundColor: Color.fromARGB(255, 18, 18, 161),
                             textStyle: TextStyle(
                               color: Colors.white
                             ),
@@ -130,7 +148,13 @@ class _LoginState extends State<Login> {
                     children: [
                       Text("New User?"),
                       TextButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => SignUpPage()
+                              )
+                            );
+                        },
                         child: Text(
                           "Sign Up",
                           style: TextStyle(
