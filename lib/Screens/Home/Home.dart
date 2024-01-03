@@ -8,10 +8,50 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
+
+  bool PolDetails = false;
+  late PageController pageController;
+  String title = "Dashboard";
+
+  void Navitap(int page){
+    pageController.jumpToPage(page);
+  }
+
+  void OnpageChange(int page){
+    setState(() {
+      switch (page) {
+        case 0:
+         PolDetails == false? title = "Dashboard":title = "Policy Details";
+          break;
+        case 1:
+         title = "Payment Details";
+          break;
+        case 2:
+         title = "Profile";
+          break;
+        default:
+        title ="Dashboard";
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    pageController=PageController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text(title),
         leading: IconButton(
           onPressed: (){},
           icon: Badge(
@@ -32,7 +72,13 @@ class _homeState extends State<home> {
           )
         ],
       ),
-      body: PageView(),
+      body: PageView(
+        controller: pageController,
+        onPageChanged: OnpageChange,
+        children: [
+          
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 128, 60, 141),
         elevation: 4,
@@ -79,7 +125,8 @@ class _homeState extends State<home> {
               ),
             label: "Profile"
               ),
-        ]
+        ],
+        onTap: Navitap,
         ),
     );
   }
