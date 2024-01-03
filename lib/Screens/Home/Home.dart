@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sendin_mobile/Screens/Home/Dashboard/Dashboard.dart';
+import 'package:sendin_mobile/Screens/Home/Payment/Payment_homepage.dart';
+import 'package:sendin_mobile/Screens/Home/Profile/Profile_page.dart';
+import 'package:sendin_mobile/Screens/Policy/Policy_details.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -76,7 +80,9 @@ class _homeState extends State<home> {
         controller: pageController,
         onPageChanged: OnpageChange,
         children: [
-          
+          PolDetails ? PolicyDetailsPage():DashboardPage(),
+          PaymentHomePage(),
+          ProfilePage()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
