@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sendin_mobile/Screens/Home/Dashboard/Dashboard.dart';
 import 'package:sendin_mobile/Screens/Home/Payment/Payment_homepage.dart';
@@ -16,6 +17,7 @@ class _homeState extends State<home> {
   bool PolDetails = false;
   late PageController pageController;
   String title = "Dashboard";
+  int _pageIndex = 0;
 
   void Navitap(int page){
     pageController.jumpToPage(page);
@@ -26,12 +28,15 @@ class _homeState extends State<home> {
       switch (page) {
         case 0:
          PolDetails == false? title = "Dashboard":title = "Policy Details";
+         _pageIndex = 0;
           break;
         case 1:
          title = "Payment Details";
+         _pageIndex = 1;
           break;
         case 2:
          title = "Profile";
+         _pageIndex = 2;
           break;
         default:
         title ="Dashboard";
@@ -86,7 +91,8 @@ class _homeState extends State<home> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 128, 60, 141),
+        backgroundColor: Colors.white,
+        currentIndex: _pageIndex,
         elevation: 4,
         type: BottomNavigationBarType.shifting,
         unselectedItemColor: Colors.grey,
@@ -118,7 +124,7 @@ class _homeState extends State<home> {
               Icons.receipt,
               color: Colors.grey,
               ),
-            label: "Rece"
+            label: "Payment"
               ),
           BottomNavigationBarItem(
             activeIcon: Icon(

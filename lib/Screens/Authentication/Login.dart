@@ -108,35 +108,38 @@ class _LoginState extends State<Login> {
                           ],
                         ),
                         SizedBox(height: 30,),
-                        ElevatedButton(
-                          onPressed: (){
-                            Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => home()
-                                  )
-                              );
-                          }, 
-                          child: Text(
-                            "LOGIN",
-                            style: TextStyle(
-                              color: Colors.white
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width*0.95,
+                          child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => home()
+                                    )
+                                );
+                            }, 
+                            child: Text(
+                              "LOGIN",
+                              style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromARGB(255, 18, 18, 161),
+                              textStyle: TextStyle(
+                                color: Colors.white
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5)
+                              ),
+                              padding: EdgeInsets.symmetric(vertical: 20),
+                              // fixedSize: Size(
+                              //   MediaQuery.of(context).size.width*0.95,
+                              //   MediaQuery.of(context).size.width*0.95,
+                              // ),
                             ),
                             ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color.fromARGB(255, 18, 18, 161),
-                            textStyle: TextStyle(
-                              color: Colors.white
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5)
-                            ),
-                            padding: EdgeInsets.symmetric(vertical: 20),
-                            fixedSize: Size(
-                              MediaQuery.of(context).size.width*0.95,
-                              40
-                            ),
-                          ),
-                          ),       
+                        ),       
                       ],
                     ),
                     ),
