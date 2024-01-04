@@ -23,24 +23,99 @@ class _DashboardPageState extends State<DashboardPage> {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    vertical: 20
+                    vertical: 20,
+                    horizontal: 16
                   ),
                   child: Stack(
+                    clipBehavior: Clip.none,
                     children:[
                       Container(
+                        width: MediaQuery.of(context).size.width ,
+                        height: 300,
+                      ),
+                      Container(
                       //  color: Color.fromARGB(255, 51, 39, 186),
-                        width: MediaQuery.of(context).size.width * 0.8,
+                        width: MediaQuery.of(context).size.width * 0.9,
                         height: 250,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 51, 39, 186),
+                          color: Color.fromARGB(255, 21, 15, 84),
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: Text(""),
                       ),
-                      Card(
-                        elevation: 3,
-                        shadowColor: Colors.transparent,
-                        shape: RoundedRectangleBorder(),
+                      Positioned(
+                        top: 5,
+                        left: -60,
+                        child: Card(
+                          clipBehavior: Clip.none,
+                          elevation: 3,
+                          shadowColor: Colors.transparent,
+                          color: Color.fromARGB(255, 51, 39, 186),
+                          shape: RoundedRectangleBorder(),
+                          child: Container(
+                            width: 400,
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 10
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 35
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text("Policy Number"),
+                                          ColoredBox(
+                                            color: Colors.yellow,
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Text("Gold"),
+                                            ),
+                                            )
+                                        ],
+                                      ),
+                                      Text("123456789")
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 35
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Something"),
+                                      Text("Something bigger"),
+                                      Divider(
+                                        color: Colors.white,
+                                        height: 40,
+                                      ),
+                                      Row(),
+                                      Row(),
+                                      SizedBox(height: 20,),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          ElevatedButton(onPressed: (){}, child: Text("Policy Detail")),
+                                          ElevatedButton(onPressed: (){}, child: Text("Make a Payment"))
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     ]
                     ),
