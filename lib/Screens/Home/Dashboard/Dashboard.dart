@@ -125,7 +125,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                             )),
                                       Divider(
                                         color: Colors.white,
-                                        height: 40,
+                                        height: 60,
                                       ),
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -339,14 +339,32 @@ class _DashboardPageState extends State<DashboardPage> {
                                           ),
                                           ),
                                            Text( 
-                                          "Faamily Holiday",
+                                          "Family Holiday",
                                           style: TextStyle(
-                                            color: Colors.white
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold
                                           ),
                                           )
                                       ],
                                     ),
-                                    ElevatedButton(onPressed: (){}, child: Text("Take a break"))
+                                    ElevatedButton(
+                                      onPressed: (){}, 
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(5)
+                                        ),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal:12
+                                          )
+                                      ),
+                                      child: Text(
+                                        "Take a break",
+                                        style: TextStyle(
+                                          color: Color.fromARGB(255, 51, 39, 186),
+                                          fontSize: 11
+                                        ),
+                                      )
+                                      )
                                   ],
                                 )
                             ],
