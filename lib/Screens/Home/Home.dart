@@ -61,6 +61,7 @@ class _homeState extends State<home> {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
+        centerTitle: true,
         leading: IconButton(
           onPressed: (){},
           icon: Badge(

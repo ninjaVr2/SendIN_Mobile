@@ -279,24 +279,117 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
                 Container(
                   //width: MediaQuery.of(context).size.width*0.9,
-                  height: MediaQuery.of(context).size.height*0.2,
+                  height: MediaQuery.of(context).size.height*0.22,
                   child: ListView(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     children: [
                       Container(
+                        width: 280,
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 10
+                        ),
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage('img1.png'),
-                            fit: BoxFit.cover
+                            image: AssetImage('assets/imgs/img1.png'),
+                            fit: BoxFit.cover,
+                            colorFilter: ColorFilter.mode(
+                              Colors.black38,
+                               BlendMode.darken
+                               )
                           ),
                         ),
-                        child: Text("Card 1"),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text( 
+                                "Up to",
+                                style: TextStyle(
+                                  color: Colors.white
+                                ),
+                                ),
+                                 Text( 
+                                "40%",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20
+                                ),
+                                ),
+                                 Text( 
+                                "Discount",
+                                style: TextStyle(
+                                  color: Colors.white
+                                ),
+                                ),
+                                SizedBox(height: 10,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                         Text( 
+                                          "For you",
+                                          style: TextStyle(
+                                            color: Colors.white
+                                          ),
+                                          ),
+                                           Text( 
+                                          "Faamily Holiday",
+                                          style: TextStyle(
+                                            color: Colors.white
+                                          ),
+                                          )
+                                      ],
+                                    ),
+                                    ElevatedButton(onPressed: (){}, child: Text("Take a break"))
+                                  ],
+                                )
+                            ],
+                          ),
+                        )
+                      ),
+                      Container(
+                        width: 280,
+                        margin: EdgeInsets.only(
+                          right: 10
+                        ),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/imgs/img2.png'),
+                            fit: BoxFit.cover,
+                            colorFilter: ColorFilter.mode(
+                              Colors.black38, 
+                              BlendMode.darken
+                              )
+                          ),
+                        ),
+                        child: Text("Card 2"),
+                      ),
+                      Container(
+                        width: 280,
+                        margin: EdgeInsets.only(
+                          right: 10
+                        ),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/imgs/img3.png'),
+                            fit: BoxFit.cover,
+                            colorFilter: ColorFilter.mode(
+                            Colors.black38, 
+                              BlendMode.darken)
+                          ),
+                        ),
+                        child: Text("Card 3"),
                       ),
                       
-                      Text("Card 1"),
-                      Text("Card 2"),
-                      Text("Card 3"),
+                      // Text("Card 1"),
+                      // Text("Card 2"),
+                      // Text("Card 3"),
                     ],
                   ),
                 ),
@@ -344,6 +437,21 @@ class _DashboardPageState extends State<DashboardPage> {
           ),
           )
           ),
+          floatingActionButton: Padding(
+            padding: const EdgeInsets.only(
+              bottom:110.0
+              ),
+            child: FloatingActionButton(
+              backgroundColor: Color.fromARGB(255, 51, 39, 186),
+              onPressed: (){},
+              shape: CircleBorder(),
+              child: Icon(
+                Icons.chat_bubble_outline_outlined,
+                color: Colors.white,
+              ),
+              ),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
     );
   }
 }
