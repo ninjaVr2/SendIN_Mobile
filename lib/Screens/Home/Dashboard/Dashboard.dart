@@ -50,8 +50,10 @@ class _DashboardPageState extends State<DashboardPage> {
                           clipBehavior: Clip.none,
                           elevation: 3,
                           shadowColor: Colors.transparent,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(55)
+                          ),
                           color: Color.fromARGB(255, 51, 39, 186),
-                          shape: RoundedRectangleBorder(),
                           child: Container(
                             width: 400,
                             padding: EdgeInsets.symmetric(
@@ -64,7 +66,8 @@ class _DashboardPageState extends State<DashboardPage> {
                               children: [
                                 Container(
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 35
+                                    horizontal: 35,
+                                    vertical: 20
                                   ),
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,17 +75,33 @@ class _DashboardPageState extends State<DashboardPage> {
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text("Policy Number"),
+                                          Text(
+                                            "Policy Number",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),),
                                           ColoredBox(
-                                            color: Colors.yellow,
+                                            color: Colors.orange,
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: Text("Gold"),
+                                              padding: const EdgeInsets.all(7.0),
+                                              child: Text(
+                                                "Gold", 
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 12
+                                                ),
+                                                ),
                                             ),
                                             )
                                         ],
                                       ),
-                                      Text("123456789")
+                                      Text(
+                                        "123456789",
+                                       style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold
+                                            ))
                                     ],
                                   ),
                                 ),
@@ -93,20 +112,146 @@ class _DashboardPageState extends State<DashboardPage> {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text("Something"),
-                                      Text("Something bigger"),
+                                      Text("Name",
+                                       style: TextStyle(
+                                              color: Colors.white
+                                            
+                                            )),
+                                      Text("Gordon Ramsey",
+                                       style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold
+                                            )),
                                       Divider(
                                         color: Colors.white,
                                         height: 40,
                                       ),
-                                      Row(),
-                                      Row(),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.symmetric(
+                                                  vertical: 5
+                                                ),
+                                                child: Text(
+                                                  "Something value",
+                                                  style: TextStyle(
+                                                  fontSize: 11,
+                                                  color: Colors.white,
+                                                ),
+                                                  ),
+                                              ),
+                                              Text(
+                                                "\$92.09",
+                                              style: TextStyle(
+                                                fontSize: 13,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold
+                                              ),)
+                                            ],
+                                          ),
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.symmetric(
+                                                  vertical: 5
+                                                ),
+                                                child: Text(
+                                                  "Something Due",
+                                                  style: TextStyle(
+                                                  fontSize: 11,
+                                                  color: Colors.white,
+                                                ),
+                                                ),
+                                              ),
+                                              Text(
+                                                "\$1500",
+                                              style: TextStyle(
+                                                fontSize: 13,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold
+                                              ),
+                                              )
+                                            ],
+                                          ),
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.symmetric(
+                                                  vertical: 5
+                                                ),
+                                                child: Text(
+                                                  "Date",
+                                                style: TextStyle(
+                                                  fontSize: 11,
+                                                  color: Colors.white,
+                                                ),
+                                                ),
+                                              ),
+                                              Text(
+                                                "DD/MM/YYYY",
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold
+                                              ),
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
                                       SizedBox(height: 20,),
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                         children: [
-                                          ElevatedButton(onPressed: (){}, child: Text("Policy Detail")),
-                                          ElevatedButton(onPressed: (){}, child: Text("Make a Payment"))
+                                          ElevatedButton(
+                                            onPressed: (){}, 
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: Color.fromARGB(255, 51, 39, 186),
+                                                side: BorderSide(
+                                                  color: Colors.white30
+                                                ),
+                                                textStyle: TextStyle(
+                                                  color: Colors.white
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius: BorderRadius.circular(5)
+                                                ),
+                                                ),
+                                            child: Text(
+                                              "Policy Detail",
+                                              style: TextStyle(
+                                                color: Colors.white
+                                              ),
+                                              )
+                                              ),
+                                          ElevatedButton(
+                                            onPressed: (){}, 
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.white,
+                                                side: BorderSide(
+                                                  color: Colors.white30
+                                                ),
+                                                textStyle: TextStyle(
+                                                  color: Colors.white
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius: BorderRadius.circular(5)
+                                                ),
+                                                ),
+                                            child: Text(
+                                              "Make a Payment",
+                                              style: TextStyle(
+                                                color: Color.fromARGB(255, 51, 39, 186)
+                                              )
+                                              )
+                                              )
                                         ],
                                       )
                                     ],
@@ -120,11 +265,17 @@ class _DashboardPageState extends State<DashboardPage> {
                     ]
                     ),
                 ),
+                SizedBox(height: 30,),
                 Container(
                   margin: EdgeInsets.symmetric(
                     vertical: 20
                   ),
-                  child:Text("Our Recommended Products For You"),
+                  child:Text(
+                    "Our Recommended Products For You",
+                    style: TextStyle(
+                      fontSize: 15,
+                  ),
+                  ),
                 ),
                 Container(
                   //width: MediaQuery.of(context).size.width*0.9,
@@ -133,6 +284,16 @@ class _DashboardPageState extends State<DashboardPage> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('img1.png'),
+                            fit: BoxFit.cover
+                          ),
+                        ),
+                        child: Text("Card 1"),
+                      ),
+                      
                       Text("Card 1"),
                       Text("Card 2"),
                       Text("Card 3"),
