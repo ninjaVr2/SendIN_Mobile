@@ -411,6 +411,7 @@ class _DashboardPageState extends State<DashboardPage> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 Container(
                   margin: EdgeInsets.symmetric(
                     vertical: 20
@@ -427,10 +428,35 @@ class _DashboardPageState extends State<DashboardPage> {
                     scrollDirection: Axis.vertical,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Image 1"),
-                          Text("Card 1"),
+                          Container(
+                            width: 80,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/imgs/img12.png'),
+                                fit: BoxFit.cover
+                              )
+                            ),
+                            child: Text(""),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20.0
+                                ),
+                              child: RichText(
+                                text: TextSpan(
+                                  text: "wertyuiolmnbsehgjgiufiyfhhjkuftdhfcvjkuigfufdhcnvjjkgifyutyhnlohfderfv",
+                                  style: TextStyle(
+                                    color: Colors.black
+                                  )
+                                )
+                                ),
+                            ),
+                          )
                         ],
                       ),
                       Row(
