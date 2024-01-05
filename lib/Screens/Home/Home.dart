@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sendin_mobile/Screens/Home/Dashboard/Dashboard.dart';
 import 'package:sendin_mobile/Screens/Home/Payment/Payment_homepage.dart';
@@ -19,7 +18,20 @@ class _homeState extends State<home> {
   String title = "Dashboard";
   int _pageIndex = 0;
 
+  void callback(bool value){
+    setState(() {
+      PolDetails = value;
+      title = "Policy Details";
+    });
+  }
+
   void Navitap(int page){
+    if(page==0){
+      setState(() {
+        PolDetails = false;
+        title = "Dashboard";
+      });
+    }
     pageController.jumpToPage(page);
   }
 
@@ -86,7 +98,7 @@ class _homeState extends State<home> {
         controller: pageController,
         onPageChanged: OnpageChange,
         children: [
-          PolDetails ? PolicyDetailsPage():DashboardPage(),
+          PolDetails ? PolicyDetailsPage():DashboardPage(callback: callback,),
           PaymentHomePage(),
           ProfilePage()
         ],

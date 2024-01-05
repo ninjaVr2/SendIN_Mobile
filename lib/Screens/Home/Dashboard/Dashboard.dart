@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
-  const DashboardPage({super.key});
+  final Function callback;
+   DashboardPage({required this.callback,super.key});
 
   @override
   State<DashboardPage> createState() => _DashboardPageState();
@@ -211,7 +212,10 @@ class _DashboardPageState extends State<DashboardPage> {
                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                         children: [
                                           ElevatedButton(
-                                            onPressed: (){}, 
+                                            onPressed: (){
+                                              widget.callback(true);
+                                              //print("press");
+                                            }, 
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Color.fromARGB(255, 51, 39, 186),
                                                 side: BorderSide(
@@ -459,18 +463,70 @@ class _DashboardPageState extends State<DashboardPage> {
                           )
                         ],
                       ),
+                      SizedBox(height: 10,),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Image 2"),
-                          Text("Card 2"),
+                          Container(
+                            width: 80,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/imgs/img2.png'),
+                                fit: BoxFit.cover
+                              )
+                            ),
+                            child: Text(""),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20.0
+                                ),
+                              child: RichText(
+                                text: TextSpan(
+                                  text: "wertyuiolmnbsehgjgiufiyfhhjkuftdhfcvjkuigfufdhcnvjjkgifyutyhnlohfderfv",
+                                  style: TextStyle(
+                                    color: Colors.black
+                                  )
+                                )
+                                ),
+                            ),
+                          )
                         ],
                       ),
+                      SizedBox(height: 10,),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Image 3"),
-                          Text("Card 3"),
+                          Container(
+                            width: 80,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/imgs/img3.png'),
+                                fit: BoxFit.cover
+                              )
+                            ),
+                            child: Text(""),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20.0
+                                ),
+                              child: RichText(
+                                text: TextSpan(
+                                  text: "wertyuiolmnbsehgjgiufiyfhhjkuftdhfcvjkuigfufdhcnvjjkgifyutyhnlohfderfv",
+                                  style: TextStyle(
+                                    color: Colors.black
+                                  )
+                                )
+                                ),
+                            ),
+                          )
                         ],
                       ),
                     ],
