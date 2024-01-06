@@ -34,6 +34,10 @@ class User{
     "lastname": Lname,
     "email": Email,
     "Phone": Phone,
+    "Gender": Gender,
+    "Country": Country,
+    "City": City,
+    "Role": Role
 
   };
 
