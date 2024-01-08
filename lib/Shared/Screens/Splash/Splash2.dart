@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 class splash2 extends StatelessWidget {
   const splash2({super.key});
 
@@ -40,7 +41,7 @@ class splash2 extends StatelessWidget {
                         ),
               Container(
                 height: 30,
-                child: SvgPic
+                child: SvgPicture.asset("assests/imgs/caro.svg")
               ),
               // ElevatedButton(
               // onPressed: (){}, 
