@@ -11,6 +11,6 @@ class OTPRegister extends StatefulWidget {
 class _OTPRegisterState extends State<OTPRegister> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }
