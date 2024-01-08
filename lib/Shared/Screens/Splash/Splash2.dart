@@ -40,7 +40,7 @@ class splash2 extends StatelessWidget {
                         ),
               Container(
                 height: 30,
-                child: Image.asset("assets/imgs/caro.svg"),
+                child: SvgPic
               ),
               // ElevatedButton(
               // onPressed: (){}, 
