@@ -6,7 +6,7 @@ class splash1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        child: Text("Splash 1"),
+        child: Image.asset("assets/imgs/logo.png"),
       ),
     );
   }
