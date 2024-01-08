@@ -4,7 +4,7 @@ class splash2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( 
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -25,6 +25,16 @@ class splash2 extends StatelessWidget {
               Container(),
               ElevatedButton(
               onPressed: (){}, 
+              style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              padding: EdgeInsets.all(0.0),
+                              textStyle: TextStyle(
+                                color: Colors.white
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5)
+                              ),
+                              ),
               child: Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
