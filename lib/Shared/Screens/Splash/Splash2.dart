@@ -21,7 +21,6 @@ class splash2 extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       ),
                       textAlign: TextAlign.center, ),
-           // Text("Welcome to our app"),
             Container(),
             ElevatedButton(
             onPressed: (){}, 
@@ -37,7 +36,6 @@ class splash2 extends StatelessWidget {
               child: Text("Next"),
             )
             ),
-          
             ],
         ),
       ),
