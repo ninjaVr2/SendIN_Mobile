@@ -33,12 +33,22 @@ class _LoginState extends State<Login> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Welcome back!",
+                    "Login",
                     style: TextStyle(
                       fontSize: 28
                     ),
                     ),
-                    SizedBox(height: 30,),
+                    Text(
+                      "Please enter your email and password to login.",
+                      style: TextStyle(
+                        fontFamily: "Sofia Pro",
+                        fontSize: 15,
+                        fontWeight: FontWeight.w300,
+                        color: Color(0xff676767),
+                        height: 28/15, 
+                      ),
+                      ),
+                    SizedBox(height: 15,),
                   Form(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     child: Column(
@@ -74,19 +84,69 @@ class _LoginState extends State<Login> {
                         SizedBox(
                           height: 20,
                           ),
-                        Row(
-                          children: [
-                            Checkbox(
-                              activeColor: Color.fromARGB(255, 18, 18, 161),
-                              shape: CircleBorder(),
-                              value: checkval, 
-                              onChanged: (check){
-                              setState(() {
-                                checkval = check!;
-                              });
-                            }
+                       
+                        SizedBox(height: 30,),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width*0.95,
+                          child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => home()
+                                    )
+                                );
+                            }, 
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: MediaQuery.of(context).size.width*0.35,
+                                vertical: 20
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Color.fromRGBO(58, 75, 149, 1),
+                                    Color.fromRGBO(144, 99, 191, 1),
+                                  ]
+                                )
+                              ),
+                              child: Text(
+                                "LOGIN",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  	fontFamily: "Sofia Pro",
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w500, 
+                                ),
+                                ),
                             ),
-                            Text("Remember Me"),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              shadowColor: Colors.transparent,
+                              textStyle: TextStyle(
+                                color: Colors.white
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5)
+                              ),
+                              padding: EdgeInsets.zero,
+                            ),
+                            ),
+                        ),
+                        SizedBox(height: 20,),
+                         Row(
+                          children: [
+                            // Checkbox(
+                            //   activeColor: Color.fromARGB(255, 18, 18, 161),
+                            //   shape: CircleBorder(),
+                            //   value: checkval, 
+                            //   onChanged: (check){
+                            //   setState(() {
+                            //     checkval = check!;
+                            //   });
+                            // }
+                            // ),
+                            // Text("Remember Me"),
                             Expanded(
                               child: SizedBox()
                               ),
@@ -106,50 +166,18 @@ class _LoginState extends State<Login> {
                           )
                           )
                           ],
-                        ),
-                        SizedBox(height: 30,),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width*0.95,
-                          child: ElevatedButton(
-                            onPressed: (){
-                              Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) => home()
-                                    )
-                                );
-                            }, 
-                            child: Text(
-                              "LOGIN",
-                              style: TextStyle(
-                                color: Colors.white
-                              ),
-                              ),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 18, 18, 161),
-                              textStyle: TextStyle(
-                                color: Colors.white
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5)
-                              ),
-                              padding: EdgeInsets.symmetric(vertical: 20),
-                              // fixedSize: Size(
-                              //   MediaQuery.of(context).size.width*0.95,
-                              //   MediaQuery.of(context).size.width*0.95,
-                              // ),
-                            ),
-                            ),
                         ),       
                       ],
                     ),
                     ),
+                    SizedBox(height: 15,),
                     const SizedBox(
                       height: 15,
                       ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("New User?"),
+                      Text("Don't have an account?"),
                       TextButton(
                         onPressed: (){
                           Navigator.of(context).push(
@@ -159,7 +187,7 @@ class _LoginState extends State<Login> {
                             );
                         },
                         child: Text(
-                          "Sign Up",
+                          "Register",
                           style: TextStyle(
                             color: Color.fromARGB(255, 76, 239, 160)
                           ),
