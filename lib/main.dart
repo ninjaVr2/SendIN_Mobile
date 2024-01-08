@@ -20,6 +20,7 @@ Widget splash(dynamic splash,Widget nextScreen){
     duration: 3000,
     splashTransition: SplashTransition.slideTransition,
     pageTransitionType: PageTransitionType.rightToLeft,
+    centered: false,
     );
 }
 

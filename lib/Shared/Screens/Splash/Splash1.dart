@@ -4,12 +4,20 @@ class splash1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          child: Image.asset("assets/imgs/logo.png"),
+    return  Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height,
+              child: Container(
+                child: Image.asset("assets/imgs/logo.png"),
+              ),
+            ), 
+          ],
         ),
-      ),
-    );
+      );
+    ;
   }
 }
