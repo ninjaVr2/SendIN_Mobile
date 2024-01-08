@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
 
 Widget splash(dynamic splash,Widget nextScreen){
   return AnimatedSplashScreen(
-    splash: splash,
-    nextScreen: nextScreen,
-    duration: 3000,
-    splashTransition: SplashTransition.slideTransition,
-    pageTransitionType: PageTransitionType.rightToLeft,
-    centered: false,
-    );
+      splash: splash,
+      nextScreen: nextScreen,
+      duration: 3000,
+      splashTransition: SplashTransition.slideTransition, 
+      pageTransitionType: PageTransitionType.rightToLeft,
+      centered: true,
+      );
 }
 
   // This widget is the root of your application.
@@ -35,10 +35,11 @@ Widget splash(dynamic splash,Widget nextScreen){
         useMaterial3: true,
       ),
       home: splash(splash1(),
-                splash(splash2(),
-                    splash(splash3(), Login()
-                    )
-                )
+                // splash(splash2(),
+                //     splash(splash3(), Login()
+                //     )
+                // )
+                splash2()
             ),
     );
   }
