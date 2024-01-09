@@ -6,6 +6,7 @@ import 'package:sendin_mobile/Screens/Authentication/OTP_login.dart';
 import 'package:sendin_mobile/Screens/Authentication/Reset_Password.dart';
 import 'package:sendin_mobile/Screens/Authentication/SignUp.dart';
 import 'package:sendin_mobile/Screens/Home/Home.dart';
+import 'package:sendin_mobile/Shared/utils/Validator.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -20,6 +21,7 @@ class _LoginState extends State<Login> {
   bool checkval = false;
   TextEditingController email =  TextEditingController();
   TextEditingController password =  TextEditingController();
+  final _formKey =GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +55,13 @@ class _LoginState extends State<Login> {
                       ),
                     SizedBox(height: 15,),
                   Form(
+                    key: _formKey,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     child: Column(
                       children: [
                         TextFormField(
                           controller: email,
+                          validator:(emailtext) => Validator.emailValidator(emailtext),
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Color.fromRGBO(247, 244, 244, 1),
@@ -71,6 +75,7 @@ class _LoginState extends State<Login> {
                         TextFormField(
                           controller: password,
                           obscureText: _isObscure,
+                          validator: (pass) => Validator.passwordValidator(pass),
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Color.fromRGBO(247, 244, 244, 1),

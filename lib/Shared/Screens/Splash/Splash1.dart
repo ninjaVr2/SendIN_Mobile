@@ -9,7 +9,6 @@ class splash1 extends StatelessWidget {
         child: Center(
           child: Container(
            // height: MediaQuery.of(context).size.height,
-           
             child: Container(
               child: Image.asset("assets/imgs/logo.png"),
             ),
@@ -17,6 +16,5 @@ class splash1 extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
