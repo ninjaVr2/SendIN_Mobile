@@ -1,6 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sendin_mobile/Screens/Authentication/OTP_login.dart';
 import 'package:sendin_mobile/Screens/Authentication/Reset_Password.dart';
 import 'package:sendin_mobile/Screens/Authentication/SignUp.dart';
 import 'package:sendin_mobile/Screens/Home/Home.dart';
@@ -26,7 +28,8 @@ class _LoginState extends State<Login> {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 20.0
+              horizontal: 20.0,
+              vertical: 20.0
               ),
             child: SingleChildScrollView(
               child: Column(
@@ -56,8 +59,10 @@ class _LoginState extends State<Login> {
                         TextFormField(
                           controller: email,
                           decoration: InputDecoration(
-                            labelText: 'Email Address or Username',
-                            hintText: 'Enter your Email Address or Username',
+                            filled: true,
+                            fillColor: Color.fromRGBO(247, 244, 244, 1),
+                            labelText: 'Email Address',
+                            hintText: 'Enter your Email Address',
                           ),
                         ),
                         SizedBox(
@@ -67,11 +72,13 @@ class _LoginState extends State<Login> {
                           controller: password,
                           obscureText: _isObscure,
                           decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Color.fromRGBO(247, 244, 244, 1),
                             labelText: 'Password',
                             hintText: 'Enter your password',
                             suffixIcon: IconButton(
                               icon: Icon(
-                                _isObscure ? Icons.visibility_off : Icons.visibility,
+                                _isObscure ? Icons.visibility_off_outlined : Icons.visibility_outlined,
                               ),
                               onPressed: () {
                                 setState(() {
@@ -161,7 +168,11 @@ class _LoginState extends State<Login> {
                             child: Text(
                               "Forgot password?",
                               style: TextStyle(
-                            color: Color.fromARGB(255, 76, 239, 160)
+                            color: Color.fromRGBO(144, 99, 191, 1),
+                            fontFamily: "Sofia Pro",
+                            fontSize: 16,
+                            fontWeight: FontWeight.w300, 
+                            height: 19/16,
                           ),
                           )
                           )
@@ -171,6 +182,83 @@ class _LoginState extends State<Login> {
                     ),
                     ),
                     SizedBox(height: 15,),
+                    GestureDetector(
+                      child: Card(
+                        color: Colors.white,
+                        surfaceTintColor: Colors.white,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 10
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SvgPicture.asset("assets/imgs/google.svg"),
+                              SizedBox(width: 10,),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal:15.0
+                                  ),
+                                child: Text(
+                                  "Continue with Google",
+                                  style: TextStyle(
+                                    fontFamily: "Sofia Pro",
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color(0xff676767),
+                                    height: 35/17, 
+                                  ),
+                                  ),
+                              ),
+                                Icon(Icons.arrow_forward_ios)
+                            ],
+                          ),
+                        )
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                         Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => OTPlogin()
+                              )
+                            );
+                      },
+                      child: Card(
+                        color: Colors.white,
+                        surfaceTintColor: Colors.white,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 10
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SvgPicture.asset("assets/imgs/otp.svg"),
+                              SizedBox(width: 10,),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal:15.0
+                                  ),
+                                child: Text(
+                                  "Login with OTP",
+                                  style: TextStyle(
+                                    fontFamily: "Sofia Pro",
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color(0xff676767),
+                                    height: 35/17, 
+                                  ),
+                                  ),
+                              ),
+                                Icon(Icons.arrow_forward_ios)
+                            ],
+                          ),
+                        )
+                      ),
+                    ),
                     const SizedBox(
                       height: 15,
                       ),
@@ -189,7 +277,11 @@ class _LoginState extends State<Login> {
                         child: Text(
                           "Register",
                           style: TextStyle(
-                            color: Color.fromARGB(255, 76, 239, 160)
+                            color: Color.fromRGBO(144, 99, 191, 1),
+                            fontFamily: "Sofia Pro",
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600, 
+                            height: 19/16,
                           ),
                           )
                           ),
