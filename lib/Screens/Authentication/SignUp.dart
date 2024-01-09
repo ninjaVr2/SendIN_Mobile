@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sendin_mobile/Screens/Authentication/Login.dart';
 import 'package:sendin_mobile/Screens/Authentication/OTP_Register.dart';
-import 'package:sendin_mobile/Screens/Home/Home.dart';
 import 'package:sendin_mobile/Shared/utils/Validator.dart';
 
 class SignUpPage extends StatefulWidget {
